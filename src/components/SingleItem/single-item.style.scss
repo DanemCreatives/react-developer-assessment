@@ -1,0 +1,25 @@
+.single-item {
+  @apply p-4 relative flex-1 h-full;
+
+  &:after {
+    content: '';
+    height: 1px;
+    @apply absolute bottom-0 inset-x-20 bg-gray-300;
+  }
+}
+
+.single-item__canvas {
+  @apply flex items-center justify-center px-4;
+
+  img {
+    transform: scale(0.85);
+  }
+}
+
+.single-item__textbox {
+  @apply py-2;
+
+  .author {
+    @apply pt-3;
+  }
+}

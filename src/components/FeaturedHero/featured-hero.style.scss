@@ -1,0 +1,16 @@
+.featured-hero {
+  @apply bg-black h-screen flex items-center justify-center;
+}
+
+.featured-hero__canvas {
+  background-image: url('../../img/books.jpg');
+  @apply bg-cover bg-center bg-repeat absolute inset-0 opacity-40 bg-fixed;
+}
+
+.featured-hero__textbox {
+  @apply relative text-center text-white;
+
+  .subheading {
+    @apply pt-6;
+  }
+}

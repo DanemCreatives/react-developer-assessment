@@ -1,0 +1,32 @@
+.header {
+  @apply fixed z-50 flex items-center justify-center py-6 inset-x-0;
+
+  &:after {
+    content: '';
+    height: 1px;
+    @apply absolute bottom-0 left-20 right-20 bg-white opacity-25;
+  }
+
+  &:before {
+    content: '';
+    @apply absolute left-0 top-0 right-0 bg-white bottom-0 transform -translate-y-full transition duration-500;
+  }
+
+  &.active {
+    &:before {
+      @apply -translate-y-0;
+    }
+  }
+}
+
+.header__logo {
+  @apply flex items-center justify-center relative z-10;
+
+  svg {
+    @apply w-12 stroke-current text-white transition duration-500;
+
+    .header.active & {
+      @apply stroke-current text-black;
+    }
+  }
+}

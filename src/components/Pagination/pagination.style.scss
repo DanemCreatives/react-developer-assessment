@@ -1,0 +1,19 @@
+.pagination {
+  @apply pt-16 pb-8;
+}
+
+.pagination__pages {
+  @apply flex items-center justify-center;
+
+  li {
+    @apply mx-1;
+    a {
+      border: 1px solid;
+      @apply p-4 border-gray-100 block;
+
+      &:hover {
+        @apply bg-gray-100;
+      }
+    }
+  }
+}
