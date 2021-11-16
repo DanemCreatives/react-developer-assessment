@@ -11,7 +11,7 @@ import './styles/index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/react-developer-assessment">
       <App />
     </BrowserRouter>
   </React.StrictMode>,
