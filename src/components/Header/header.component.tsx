@@ -2,8 +2,10 @@ import './header.style.scss';
 import { useState, useEffect } from 'react';
 
 const Header: React.FC = () => {
+  // set and offset value for header scroll animation
   const [offset, setOffset] = useState(0);
 
+  // grab the offset value and store in state so it can be used for setting the active class
   useEffect(() => {
     window.onscroll = () => {
       setOffset(window.pageYOffset);

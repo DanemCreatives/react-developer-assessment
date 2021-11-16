@@ -8,7 +8,7 @@ interface IProps {
 
 const Pagination: React.FC<IProps> = ({ postsPerPage, totalPosts, paginate }: IProps) => {
   const pageNumbers = [];
-
+  // Calculations for setting the page numbers
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
   }

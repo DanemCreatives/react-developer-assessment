@@ -20,8 +20,11 @@ interface IProps {
 }
 
 const DetailsPage: React.FC<IProps> = ({ posts }: IProps) => {
+  // get the parameters from the url
   const params = useParams();
+  // filter the post to find the featured item
   const item = posts.find((post) => post.id === params.id);
+  // Conditionally set featured item details
   return (
     <div className="details-page">
       <ul>

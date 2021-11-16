@@ -22,6 +22,7 @@ interface IProps {
 const SingleItem: React.FC<IProps> = ({ data }: IProps) => {
   return (
     <div className="single-item">
+      {/* React router dom link to access single page with item id reference */}
       <Link to={`/${data.id}`}>
         <div className="single-item__content">
           <div className="single-item__canvas">
