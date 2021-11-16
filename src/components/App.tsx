@@ -80,9 +80,10 @@ const App: React.FC = () => {
       <Routes>
         <Route
           path="/"
+          exact
           element={!loading && <HomePage posts={updatePosts} category={filteredPostsHandler} />}
         />
-        <Route path="/:id" element={!loading && <DetailsPage posts={updatePosts} />} />
+        <Route path="/:id" exact element={!loading && <DetailsPage posts={updatePosts} />} />
       </Routes>
     </div>
   );
