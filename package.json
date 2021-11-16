@@ -37,7 +37,7 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "predeploy": "yarn build",
+    "predeploy": "yarn build; craco build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
