@@ -30,11 +30,11 @@ h6 {
 
 .heading {
   font-family: 'Playfair Display', serif;
-  @apply text-7xl font-medium;
+  @apply font-medium text-4xl md:text-5xl lg:text-7xl;
 }
 
 .subheading {
-  @apply text-3xl  font-thin;
+  @apply font-thin text-xl md:text-2xl lg:text-3xl;
 }
 
 .title {
@@ -45,4 +45,9 @@ h6 {
 .author {
   color: #9e866b;
   @apply font-medium text-sm font-semibold;
+}
+
+.box {
+  background-color: #9e866b;
+  @apply text-white text-sm flex items-center justify-center px-2 rounded-sm;
 }

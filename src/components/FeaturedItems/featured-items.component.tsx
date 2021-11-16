@@ -2,7 +2,7 @@ import './featured-items.style.scss';
 import { Col, Row } from 'tailwind-react-ui';
 import SingleItem from '../SingleItem/single-item.component';
 import Pagination from '../Pagination/pagination.component';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 interface IProps {
   posts: {
@@ -19,20 +19,16 @@ interface IProps {
       name: string;
     }[];
   }[];
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+  category: any;
 }
 
-const FeaturedItems: React.FC<IProps> = ({ posts }: IProps) => {
+const FeaturedItems: React.FC<IProps> = ({ posts, category }: IProps) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(12);
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-
-  useEffect(() => {
-    posts = [];
-    console.log(currentPosts);
-  }, [posts]);
-
   const [categories] = useState([
     'Surveys and Forms',
     'Digital Marketing',
@@ -46,39 +42,28 @@ const FeaturedItems: React.FC<IProps> = ({ posts }: IProps) => {
     'Email Marketing',
   ]);
 
-  const categoryHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    posts = [];
-    console.log(posts);
-    // posts.map((single) => {
-    //   const currPost = single;
-    //   single.categories.map((postCat) => {
-    //     if (postCat.name.replaceAll(' ', '-').toLowerCase() === e.target.value) {
-    //       const filtered = posts.filter((post) => {
-    //         for (let i = 0; i < post.categories.length; i++) {
-    //           if (post.categories[i].name.includes(e.target.value)) {
-    //             return post;
-    //           }
-    //         }
-    //       });
-    //     }
-    //   });
-    // });
-  };
-
   return (
     <div className="featured-items" id="featured-items">
-      <select onChange={categoryHandler}>
-        {categories.map((category, index) => (
-          <option key={index} value={category.replaceAll(' ', '-').toLowerCase()}>
-            {category}
-          </option>
-        ))}
-      </select>
+      <div className="featured-items__nav">
+        <div className="box">Category:</div>
+        <select
+          onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
+            category(e.target.value);
+            setCurrentPage(1);
+          }}
+        >
+          {categories.map((category, index) => (
+            <option key={index} value={category.replaceAll(' ', '-').toLowerCase()}>
+              {category}
+            </option>
+          ))}
+        </select>
+      </div>
       <div className="featured-items__grid">
         <Row>
           {currentPosts.map((single, index) => {
             return (
-              <Col key={index} w="1/4" text="center" p="2">
+              <Col key={index} w={{ def: 'full', sm: '1/2', lg: '1/4' }} text="center" p="2">
                 <SingleItem data={single} />
               </Col>
             );

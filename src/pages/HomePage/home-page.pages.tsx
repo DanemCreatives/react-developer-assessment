@@ -18,14 +18,16 @@ interface IProps {
       name: string;
     }[];
   }[];
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+  category: any;
 }
 
-const HomePage: React.FC<IProps> = ({ posts }: IProps) => {
+const HomePage: React.FC<IProps> = ({ posts, category }: IProps) => {
   return (
     <div className="home-page">
       <Header />
       <FeaturedHero />
-      <FeaturedItems posts={posts} />
+      <FeaturedItems posts={posts} category={category} />
     </div>
   );
 };

@@ -1,3 +1,20 @@
+.featured-items {
+  @apply px-10;
+}
 .featured-items__grid {
-  @apply container mx-auto py-20;
+  @apply container mx-auto pb-20 transition duration-500 opacity-100;
+
+  .animate & {
+    @apply opacity-0;
+  }
+}
+
+.featured-items__nav {
+  border-width: 1px;
+  @apply container mx-auto border-gray-200 py-4 mt-10 border-solid border-r-0 border-l-0 flex;
+
+  select {
+    border-width: 1px;
+    @apply ml-1 border-solid border-gray-200 p-1 text-sm cursor-pointer rounded-sm w-full focus:outline-none;
+  }
 }

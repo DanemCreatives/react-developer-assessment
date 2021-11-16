@@ -1,0 +1,16 @@
+.details-page {
+  @apply text-black flex items-center justify-center h-screen bg-gray-600;
+  ul {
+    @apply bg-gray-200 rounded-md p-8;
+  }
+  li {
+    @apply py-2 text-sm;
+  }
+  span {
+    @apply font-bold;
+  }
+  a {
+    @apply font-bold;
+    color: #9e866b;
+  }
+}
