@@ -51,3 +51,27 @@ h6 {
   background-color: #9e866b;
   @apply text-white text-sm flex items-center justify-center px-2 rounded-sm;
 }
+
+@media (min-width: 640px) {
+  .sm\:w-1\/2 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:w-1\/4 {
+    width: 25%;
+  }
+}
+.flex.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
